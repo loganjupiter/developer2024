@@ -46,6 +46,8 @@ app.post("/events", (req, res) => {
   }
 });
 
+
+
 app.listen(port, () => {
   console.log(`Escuchando al servidor http://localhost:${port}/events`);
 });
