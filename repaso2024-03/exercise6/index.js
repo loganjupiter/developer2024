@@ -31,12 +31,11 @@ app.get("/events/:id", (req, res) => {
 });
 
 app.post("/events", (req, res) => {
-  const idP = req.query.id;
   const newEvent = {
-    id: req.query.id,
-    name: req.query.name,
-    date: req.query.date,
-    description: req.query.description,
+    id: req.body.id,
+    name: req.body.name,
+    date: req.body.date,
+    description: req.body.description,
   };
   if (events.find((event) => event.id != idPvv)) {
     events.push(newEvent);
@@ -46,7 +45,7 @@ app.post("/events", (req, res) => {
   }
 });
 
-
+app.patch();
 
 app.listen(port, () => {
   console.log(`Escuchando al servidor http://localhost:${port}/events`);
