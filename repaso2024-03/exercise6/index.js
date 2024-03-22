@@ -32,18 +32,17 @@ app.get("/events/:id", (req, res) => {
 
 app.post("/events", (req, res) => {
   const idP = req.query.id;
-
   const newEvent = {
-    id: req.body.id,
-    name: req.body.name,
-    date: req.body.date,
-    description: req.body.description,
+    id: req.query.id,
+    name: req.query.name,
+    date: req.query.date,
+    description: req.query.description,
   };
-  if (events.find((event) => event.id != idP)) {
+  if (events.find((event) => event.id != idPvv)) {
     events.push(newEvent);
     res.send(newEvent);
   } else {
-    res.json({ message: "El eventro coincide con otro ya creado" });
+    res.json({ message: "Evento no encontrado" });
   }
 });
 
@@ -51,42 +50,4 @@ app.post("/events", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Escuchando al servidor http://localhost:${port}/events`);
-});
-
-app.patch("/events/:id", (req, res) => {
-  const idP = req.params.id;
-  const event = db.find((event) => event.id == idP);
-
-  if (!event) {
-    res.status(404).json({ message: "El evento no existe" });
-  } else {
-    const body = req.body;
-
-    if (body.name) {
-      event.date = body.date;
-    }
-
-    if (body.date) {
-      event.date = body.date;
-    }
-
-    if (body.description) {
-      event.description = body.description;
-    }
-
-    res.status(200).json({ message: "Evento actualizado" });
-  }
-});
-
-app.delete("/events/:id", (req, res) => {
-  const idP = req.params.id;
-
-  const eventIndex = db.findIndex((event) => event.id == idP);
-
-  if (eventIndex === -1) {
-    res.json({ message: "Evento no encontrado", Status: 404 });
-  } else {
-    db.splice(eventIndex, 1);
-    res.json({ message: "Evento eliminado correctamente", Status: 200 });
-  }
 });
