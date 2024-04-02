@@ -1,51 +1,46 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
 
-class User extends Model {
+class Event extends Model {
   static initModel(sequelize) {
-    User.init(
+    Event.init(
       {
         id: {
           type: DataTypes.BIGINT, // Notar que si bien esto en BD se guarda como BIGINT (8 bytes), Sequelize lo retorna como String, ya que JavaScript no lo puede representar.
           primaryKey: true,
           autoIncrement: true,
         },
-        firstname: {
+        name: {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        lastname: {
+        date: {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        email: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          unique: true,
-        },
-        password: {
+        description: {
           type: DataTypes.STRING,
           allowNull: false,
         },
       },
       {
         sequelize,
-        modelName: "user",
+        modelName: "event",
       }
     );
-    return User;
+    return Event;
   }
 }
 
-const sequelize = new Sequelize("example_db", "root", "root", {
+const sequelize = new Sequelize("ejemplo_clase_db", "root", "root", {
   host: "127.0.0.1",
   port: 3306,
   dialect: "mysql",
   logging: false,
 });
 
-User.initModel(sequelize);
+Event.initModel(sequelize);
 
 module.exports = {
   sequelize,
-  User,
+  Event,
 };
