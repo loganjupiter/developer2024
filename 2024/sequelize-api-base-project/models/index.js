@@ -31,7 +31,7 @@ class Event extends Model {
   }
 }
 
-const sequelize = new Sequelize("ejemplo_clase_db", "root", "root", {
+const sequelize = new Sequelize("example_class_db", "root", "rootroot", {
   host: "127.0.0.1",
   port: 3306,
   dialect: "mysql",

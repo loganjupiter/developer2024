@@ -20,15 +20,7 @@ router.get("/events", async (req, res) => {
 //   res.send(JSON.stringify(events));
 // });
 
-router.get("/events/:id", (req, res) => {
-  const reqId = req.params.id;
-  const newEvent = db.find((event) => event.id == reqId);
-  if (newEvent) {
-    res.send(newEvent);
-  } else {
-    res.json({ message: "Evento no encontrado" });
-  }
-});
+ 
 
 router.post("/events", (req, res) => {
   const idP = req.query.id;
