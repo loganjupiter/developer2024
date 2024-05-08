@@ -1,13 +1,13 @@
-import React from "react";
-import Movie from "./components/Movie";
-
+import Title from "./components/Title";
+import Subtitle from "./components/Subtitle";
+import Description from "./components/Description";
 function App() {
   return (
     <>
       <div>
-        <Movie title="Clicka" />
-        <Movie subtitle="Subtitlo" />
-        <Movie name="María" />
+        <Title title="Clicka" />
+        <Subtitle subtitle="Escena V" />
+        <Description name="Jupiter Producer" />
       </div>
     </>
   );

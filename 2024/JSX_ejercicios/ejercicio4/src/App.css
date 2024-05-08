@@ -1,0 +1,11 @@
+.imgDiv {
+  display: flex;
+  justify-content: center;
+  height: 40rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.imgMovie {
+  height: 100%;
+}
