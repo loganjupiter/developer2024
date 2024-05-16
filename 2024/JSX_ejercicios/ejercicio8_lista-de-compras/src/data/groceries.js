@@ -1,4 +1,4 @@
-const listproducts = [
+export default [
   {
     id: 1,
     name: "Frutilla",
@@ -36,7 +36,7 @@ const listproducts = [
   },
   {
     id: 8,
-    name: "Champiñon",
+    name: "Champiñón",
     unitPrice: 80.0,
   },
   {
@@ -105,5 +105,3 @@ const listproducts = [
     unitPrice: 83.0,
   },
 ];
-
-export default listproducts;

@@ -1,4 +1,4 @@
-import listproducts from "../assets/data/listproducts";
+import groceries from "../data/groceries";
 
 function Products({ cartProducts, setCartProducts }) {
   const addProduct = (product) => {
