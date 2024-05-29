@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import YouTube from "react-youtube";
 
 function Movies({ rating }) {
@@ -30,7 +29,12 @@ function Movies({ rating }) {
       <div className="row">
         {movies.map((movie) => (
           <div className="card col-3 mx-0" key={movie.id}>
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt=""
+              height={"auto"}
+              width={"100%"}
+            />
           </div>
         ))}
       </div>

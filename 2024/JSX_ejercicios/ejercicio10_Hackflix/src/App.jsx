@@ -5,7 +5,7 @@ import Movies from "./components/Movies";
 import Rating from "./components/Rating";
 import axios from "axios";
 import YouTube from "react-youtube";
-
+import Poster from "./components/Posters";
 
 function App() {
   const [rating, setRating] = useState(0);
